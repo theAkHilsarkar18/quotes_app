@@ -2,34 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:quotes_app/homescreen.dart';
+import 'package:quotes_app/screens/love.dart';
 import 'package:quotes_app/screens/motivational.dart';
 
-
-List<Color> color1 = [
-  Colors.pink,
-  Colors.black38,
-  Colors.teal,
-  Colors.lightBlue,
-  Colors.green,
-  Colors.orange,
-  Colors.cyan,
-  Colors.brown,
-  Colors.purple,
-  Colors.red,
-];
-
-List<Color> color2 = [
-  Colors.pinkAccent,
-  Colors.black45,
-  Colors.tealAccent,
-  Colors.lightBlueAccent,
-  Colors.greenAccent,
-  Colors.orangeAccent,
-  Colors.cyanAccent,
-  Colors.brown.shade600,
-  Colors.purpleAccent,
-  Colors.redAccent,
-];
 
 void main()
 {
@@ -37,9 +12,40 @@ void main()
     MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/' : (context) => Motivational(),
+        '/' : (context) => Homescreen(),
         'motivational' : (context) => Motivational(),
+        'love' : (context) => Love(),
       },
     ),
   );
 }
+
+
+List<Color> color2 = [
+ Color(0xffF0F5F9),
+ Color(0xffF0F5F9),
+ Color(0xffF0F5F9),
+ Color(0xffF0F5F9),
+ Color(0xffF0F5F9),
+ Color(0xffF0F5F9),
+ Color(0xffF0F5F9),
+ Color(0xffF0F5F9),
+ Color(0xffF0F5F9),
+ Color(0xffF0F5F9),
+
+];
+
+List<Color> color1 = [
+  Color(0xffC9D6DF),
+  Color(0xffC9D6DF),
+  Color(0xffC9D6DF),
+  Color(0xffC9D6DF),
+  Color(0xffC9D6DF),
+  Color(0xffC9D6DF),
+  Color(0xffC9D6DF),
+  Color(0xffC9D6DF),
+  Color(0xffC9D6DF),
+  Color(0xffC9D6DF),
+
+];
+

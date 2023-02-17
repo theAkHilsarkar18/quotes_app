@@ -1,27 +1,29 @@
+
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:whatsapp_share/whatsapp_share.dart';
-import '../main.dart';
+
 import '../snapbox.dart';
 
-class Motivational extends StatefulWidget {
-  const Motivational({Key? key}) : super(key: key);
 
-  @override
-  State<Motivational> createState() => _MotivationalState();
-}
-
-List MotivationalQuotes = [
-  "assets/motivational/m1.png",
-  "assets/motivational/m2.png",
-  "assets/motivational/m3.png",
-  "assets/motivational/m4.png",
-  "assets/motivational/m5.png",
+List LoveQuotes = [
+  "assets/love/l6.jpg",
+  "assets/love/l7.jpg",
+  "assets/love/l8.jpg",
+  "assets/love/l9.jpg",
+  "assets/love/l10.jpg",
+  "assets/love/l11.jpg",
 ];
 
-class _MotivationalState extends State<Motivational> {
+
+class Love extends StatefulWidget {
+  const Love({Key? key}) : super(key: key);
+
+  @override
+  State<Love> createState() => _LoveState();
+}
+
+class _LoveState extends State<Love> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -30,7 +32,7 @@ class _MotivationalState extends State<Motivational> {
         appBar: AppBar(
           elevation: 0,
           leading:
-              Icon(Icons.all_inclusive, color: Color(0xff1E2022), size: 30),
+          Icon(Icons.all_inclusive, color: Color(0xff1E2022), size: 30),
           centerTitle: true,
           title: Text(
             "Best Quotes",
@@ -96,7 +98,7 @@ class _MotivationalState extends State<Motivational> {
                     child: CarouselSlider.builder(
                       itemCount: 5,
                       itemBuilder: (context, index, realIndex) {
-                        return Snapbox(MotivationalQuotes[index]);
+                        return Snapbox(LoveQuotes[index]);
                       },
                       options: CarouselOptions(
                         height: 400,
@@ -155,9 +157,5 @@ class _MotivationalState extends State<Motivational> {
       ),
     );
   }
-
-
-
-
-
 }
+
