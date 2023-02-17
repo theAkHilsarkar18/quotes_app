@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scroll_snap_list/scroll_snap_list.dart';
+
+import 'main.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({Key? key}) : super(key: key);
@@ -23,6 +26,8 @@ class _HomescreenState extends State<Homescreen> {
     "Attitude",
     "Angry",
   ];
+
+
 
 
   @override
@@ -56,7 +61,7 @@ class _HomescreenState extends State<Homescreen> {
            Container(
              height: 708,
              width: double.infinity,
-             child: ListView.builder(itemBuilder: (context, index) => statusbox(),itemCount: statusTopic.length,physics: BouncingScrollPhysics(),),
+             child: ListView.builder(itemBuilder: (context, index) => statusbox(color1[index],color2[index],statusTopic[index]),itemCount: statusTopic.length,physics: BouncingScrollPhysics(),),
            ),
          ],
        ),
@@ -65,7 +70,7 @@ class _HomescreenState extends State<Homescreen> {
     );
   }
 
-  Widget statusbox()
+  Widget statusbox(Color c1 , Color c2 , String topic)
   {
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -76,17 +81,17 @@ class _HomescreenState extends State<Homescreen> {
             borderRadius: BorderRadius.circular(10),
           gradient: LinearGradient(
             colors: [
-              Colors.amber,
-              Colors.amberAccent,
+             c1,
+              c2,
             ]
           ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Funny",style: GoogleFonts.aBeeZee(color: Colors.white,fontWeight: FontWeight.w500,letterSpacing: 2),),
+            Text("$topic",style: GoogleFonts.aBeeZee(color: Colors.white,fontWeight: FontWeight.bold,letterSpacing: 2),),
             SizedBox(height: 10,),
-            Icon(Icons.emoji_emotions_outlined,color: Colors.white,)
+            Icon(Icons.emoji_emotions_outlined,color: Colors.white,size: 30,),
           ],
         ),
       ),
