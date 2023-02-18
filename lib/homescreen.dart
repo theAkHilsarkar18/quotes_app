@@ -16,13 +16,20 @@ class _HomescreenState extends State<Homescreen> {
     "Love",
     "Sad",
     "Motivational",
-    "Inspiration",
     "Pray",
-    "Happy",
     "Funny",
     "Birthday",
     "Attitude",
-    "Angry",
+  ];
+
+  List routeName = [
+    "love",
+    "sad",
+    "motivational",
+    "pray",
+    "funny",
+    "birthday",
+    "att",
   ];
 
   @override
@@ -31,13 +38,12 @@ class _HomescreenState extends State<Homescreen> {
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,
-          leading:
-              Icon(Icons.all_inclusive, color: Color(0xff1E2022), size: 30),
+          leading: Icon(Icons.all_inclusive, color: Colors.white, size: 30),
           centerTitle: true,
           title: Text(
             "Best Quotes",
             style: GoogleFonts.aBeeZee(
-                color: Color(0xff1E2022),
+                color: Colors.white,
                 fontSize: 18,
                 letterSpacing: 2,
                 fontWeight: FontWeight.w500),
@@ -45,29 +51,33 @@ class _HomescreenState extends State<Homescreen> {
           actions: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Icon(Icons.favorite_border,
-                  color: Color(0xff1E2022), size: 25),
+              child: Icon(Icons.favorite_border, color: Colors.white, size: 25),
             ),
           ],
           flexibleSpace: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color(0xffC9D6DF),
-                  Color(0xffF0F5F9),
+                  Color(0xff09203F),
+                  Color(0xff537895),
                 ],
               ),
             ),
           ),
         ),
-        body: Column(
+        body: Stack(
           children: [
+            Container(
+              height: double.infinity,
+              width: double.infinity,
+              decoration: BoxDecoration(),
+            ),
             Container(
               height: 708,
               width: double.infinity,
               child: ListView.builder(
                 itemBuilder: (context, index) =>
-                    statusbox(color1[index], color2[index], statusTopic[index]),
+                    statusbox(color1[index], color2[index], statusTopic[index],routeName[index]),
                 itemCount: statusTopic.length,
                 physics: BouncingScrollPhysics(),
               ),
@@ -79,19 +89,19 @@ class _HomescreenState extends State<Homescreen> {
     );
   }
 
-  Widget statusbox(Color c1, Color c2, String topic) {
+  Widget statusbox(Color c1, Color c2, String topic , String rname) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(context, 'love');
+          Navigator.pushNamed(context, '$rname');
         },
         child: Container(
           height: 100,
           width: 150,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: Color(0xff1E2022), width: 2),
+            //border: Border.all(color: Color(0xff1E2022), width: 2),
             gradient: LinearGradient(colors: [
               c1,
               c2,
@@ -103,7 +113,7 @@ class _HomescreenState extends State<Homescreen> {
               Text(
                 "$topic",
                 style: GoogleFonts.aBeeZee(
-                    color: Color(0xff1E2022),
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 2),
               ),
@@ -112,7 +122,7 @@ class _HomescreenState extends State<Homescreen> {
               ),
               Icon(
                 Icons.emoji_emotions_outlined,
-                color: Color(0xff1E2022),
+                color: Colors.white,
                 size: 30,
               ),
             ],

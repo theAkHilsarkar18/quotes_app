@@ -27,15 +27,15 @@ class _MotivationalState extends State<Motivational> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xffF0F5F9),
-        appBar: AppBar(
+        appBar:AppBar(
           elevation: 0,
           leading:
-              Icon(Icons.all_inclusive, color: Color(0xff1E2022), size: 30),
+          Icon(Icons.all_inclusive, color:Colors.white, size: 30),
           centerTitle: true,
           title: Text(
             "Best Quotes",
             style: GoogleFonts.aBeeZee(
-                color: Color(0xff1E2022),
+                color: Colors.white,
                 fontSize: 18,
                 letterSpacing: 2,
                 fontWeight: FontWeight.w500),
@@ -44,15 +44,15 @@ class _MotivationalState extends State<Motivational> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Icon(Icons.favorite_border,
-                  color: Color(0xff1E2022), size: 25),
+                  color: Colors.white, size: 25),
             ),
           ],
           flexibleSpace: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color(0xffC9D6DF),
-                  Color(0xffF0F5F9),
+                  Color(0xff09203F),
+                  Color(0xff537895),
                 ],
               ),
             ),
